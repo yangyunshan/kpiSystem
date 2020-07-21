@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="#">
+
+    <title>绩效管理</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Custom styles for this project -->
+    <link href="../css/style_1.css" rel="stylesheet">
+
+    <!--Bootstrap table-->
+    <link rel="stylesheet" href="../bootstrap-table/bootstrap-table.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <style type="text/css">
+      .table td, .table th {
+        font-style: normal;
+        font-weight: bold;
+        text-align:center;
+        width: 200px;
+        height: 100px;
+      }
+      select {
+        width: 60%;
+      }
+
+    </style>
+  </head>
+
+  <header>
+    <div>
+      <a href="performancemanager.html" style="margin-left: 0"><img src="../images/logo.png" width="40%"></a>
+    </div>
+  </header>
+
+  <body>
+  <nav>
+    <ul style="background: #2aabd2">
+      <li><a class="active" href="report.html">绩效管理</a></li>
+      <li><a href="UserManage.html">用户管理</a></li>
+      <li><a href="javascript:void(0)" onclick="logout()">退出</a></li>
+      <li style="float: right;">
+        <a id="loginInfo" href="userInfo.html" style="background: #2aabd2;"></a>
+      </li>
+    </ul>
+  </nav>
+
+    <div class="container" style="margin-top:10px;width: 2000px;overflow: auto">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">绩效信息</h3>
+        </div>
+        <div class="panel-body" style="width: 100%">
+          <table id="td_signCol"></table>
+          <h4 id="sum" style="text-align: right">总分：</h4>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+      bootstrap-3.3.7-dist
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+    <script src="../bootstrap-table/extensions/export/bootstrap-table-export.min.js"></script>
+    <script src="../js/tableexport.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/report.js"></script>
+
+
+    <script type="text/javascript">
+      $(function(){
+        //加载表格
+        var oTable = new TableInit();
+        oTable.Init();
+      })
+
+      //表格初始化方法
+      var TableInit = function () {
+          var oTableInit = new Object();
+          oTableInit.Init = function () {
+              $('#td_signCol').bootstrapTable({
+                  //TODO：后台接口，传输数据为json，对应字段为121行开始的filed
+                  url: "getAllUserInfo",          //请求后台的URL（*）//bootstrap table要求的数据要有rows和total
+                  dataType:"json",
+                  contentType:"application/json;charset=utf-8",
+                  method: "post",                     //请求方式（*）
+                  cache: true, //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+                  pagination: true,                   //是否显示分页（*）
+                  sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*）
+                  //responseHandler:responseHandler自定义来生成total和row字段
+                  //dataField:"data",设置接口返回值中用于填充表格数据的字段
+                  search:true,
+                  searchOnEnterKey: true,
+
+                  showExport: true,      //是否显示导出
+                  buttonsAlign:"left",  //按钮位置
+                  exportDataType: "all",              //basic', 'all', 'selected'.
+                  // exportTypes:['excel'],  //导出文件类型
+                  Icons:'glyphicon-export',
+                  exportOptions:{
+                    ignoreColumn: [15,16,17],  //忽略某一列的索引
+                    fileName: '绩效统计',  //文件名称设置
+                    worksheetName: 'sheet1',  //表格工作区名称
+                    tableName: '绩效统计',
+                  },
+
+                  pageNumber: 1,                       //初始化加载第一页，默认第一页
+                  pageSize: 10,                       //每页的记录行数（*）
+                  pageList: [10,100],        //可供选择的每页的行数（*）
+                  sortable: true,                     //是否启用排序
+                  sortOrder: "asc",                   //排序方式
+                  sortClass:"sumScore",
+                  uniqueId: "tid ",                     //每一行的唯一标识，一般为主键列
+                  columns: [
+                    [{
+                      title: "类别",
+                      align: "center",
+                      valign: "middle",
+                      colspan: 3
+                    },{
+                      title: "一、按工作项",
+                      align: "center",
+                      valign: "middle",
+                      colspan: 2
+                    },{
+                      title: "二、按工作量",
+                      align: "center",
+                      valign: "middle",
+                      colspan: 2
+                    },{
+                      title: "三、按双一流绩效分",
+                      align: "center",
+                      valign: "middle",
+                      colspan: 2,
+                      rowspan: 1
+                    },{
+                      title: "四、其他",
+                      align: "center",
+                      valign: "middle",
+                      colspan: 2,
+                      rowspan: 1
+                    },{
+                        title: "统计",
+                        align: "center",
+                        valign: "middle",
+                        colspan: 4,
+                        rowspan: 1
+                    },{
+                      forceExport:true,
+                      title: "操作",
+                      align: "center",
+                      valign: "middle",
+                      colspan: 3,
+                      rowspan: 1
+                    }],
+                    [
+                    {
+                      field: 'no',
+                      title: '序号',
+                      align: "center",
+                      colspan: 1,
+                      rowspan: 1,
+                      formatter: function (value, row, index) {
+                          //获取每页显示的数量
+                          return index + 1;
+                    }
+                   },{
+                        field: "tid",
+                        title: "教师工号",
+                        align: "center",
+                        valign: "middle",
+                        colspan: 1,
+                        rowspan: 1
+                    },{
+                        field: "name",
+                        title: "教师姓名",
+                        align: "center",
+                        valign: "middle",
+                        colspan: 1,
+                        rowspan: 1
+                    },{
+                        field: "kpi1Name",
+                        title: "绩效项名称",
+                        align: "center",
+                        valign: "middle",
+                        colspan: 1,
+                        rowspan: 1
+                    },{
+                      field: "kpi1Score",
+                      title: "得分",
+                      align: "center",
+                      sortable: true,
+                      valign: "middle",
+                      colspan: 1,
+                      rowspan: 1,
+                      formatter: function(value, row, index){
+                        return parseFloat(value).toFixed(2);
+                      }
+                    },{
+                      field: "kpi2Name",
+                      title: "绩效项名称",
+                      align: "center",
+                      valign: "middle",
+                      colspan: 1,
+                      rowspan: 1
+                    },{
+                      field: "kpi2Score",
+                      title: "得分",
+                      align: "center",
+                      sortable: true,
+                      valign: "middle",
+                      colspan: 1,
+                      formatter: function(value, row, index){
+                        return parseFloat(value).toFixed(2);
+                      }
+                    },{
+                      field: "kpi3Name",
+                      title: "绩效项名称",
+                      align: "center",
+                      valign: "middle",
+                      colspan: 1,
+                      rowspan: 1
+                    },{
+                      field: "kpi3Score",
+                      title: "得分",
+                      sortable: true,
+                      align: "center",
+                      valign: "middle",
+                      colspan: 1,
+                      rowspan: 1,
+                      formatter: function(value, row, index){
+                        return parseFloat(value).toFixed(2);
+                      }
+                    },{
+                      field: "kpi4Name",
+                      title: "绩效项名称",
+                      align: "center",
+                      valign: "middle",
+                      colspan: 1,
+                      rowspan: 1
+                    },{
+                      field: "kpi4Score",
+                      title: "得分",
+                      sortable: true,
+                      align: "center",
+                      valign: "middle",
+                      colspan: 1,
+                      formatter: function(value, row, index){
+                        return parseFloat(value).toFixed(2);
+                      }
+                    },{
+                        field: "sumScore",
+                        title: "总分",
+                        sortable: true,
+                        align: "center",
+                        valign: "middle",
+                        colspan: 1,
+                        formatter: function(value, row, index){
+                        return parseFloat(value).toFixed(2);
+                      }
+                    },{
+                      field: "b4Score",
+                      title: "野外实习教学主讲员得分",
+                      // sortable: true,
+                      align: "center",
+                      valign: "middle",
+                      colspan: 1,
+                      formatter: function(value, row, index){
+                        return parseFloat(value).toFixed(2);
+                      }
+                    },{
+                      field: "b5Score",
+                      title: "野外实习教学安全员得分",
+                      sortable: true,
+                      align: "center",
+                      valign: "middle",
+                      colspan: 1,
+                      formatter: function(value, row, index){
+                        return parseFloat(value).toFixed(2);
+                      }
+                    },{
+                      field: "score",
+                      title: "加权后总得分",
+                      sortable: true,
+                      align: "center",
+                      valign: "middle",
+                      colspan: 1,
+                      formatter: function(value, row, index){
+                        return value.toFixed(2);
+                      }
+                    },
+                      {
+                      field: "status",
+                      title: "审核状态",
+                      align: "center",
+                      valign: "middle",
+                      forceExport:true,
+                      colspan: 1,
+                      rowspan: 1,
+                      formatter: function(value, row, index){
+                          if (row.status==0) {
+                            return "未审核";
+                          } if (row.status==1) {
+                            return "已审核";
+                        }
+                      }
+                    },{
+                      field:"check",
+                      title:"查看",
+                      align: "center",
+                      forceExport:true,
+                      valign: "middle",
+                      colspan: 1,
+                      rowspan: 1,
+                      formatter: function(value, row, index) {
+                        var ret = "<button class='btn btn-primary' id='editTable' style='margin-left:10px'>查看/编辑</button>";
+                        return ret;
+                      },
+                      //这里是一个监听对象，描述发生一定动作后执行的操作，这里是click动作生成模态框
+                      events:{
+                        'click #editTable':function(e, value, row, index){
+                          //TODO:重定位到repReview
+                            window.open("repReview.html?tid="+row.tid);
+                        }
+                      }
+                    },{
+                      field: "review",
+                      title: "审核",
+                      forceExport:true,
+                      align: "center",
+                      valign: "middle",
+                      colspan: 1,
+                      rowspan: 1,
+                      formatter: function(value, row, index) {
+                        var ret = "<button class='btn btn-success' id='qualified' style='margin-left:5px'>通过</button>"+
+                        "<button class='btn btn-warning' id='unqualified' style='margin-left:5px'>不通过</button>";
+                        return ret;
+                      },
+                      events:{
+                        'click #qualified':function(e, value, row, index){
+                          //TODO:审核
+                          var tid = row.tid;
+                          var data = {
+                            "id":tid
+                          };
+                          $.ajax({
+                            url:"verifyInfo",
+                            type: "post",
+                            data: JSON.stringify(data),
+                            dataType:"json",
+                            contentType:"application/json;charset=utf-8",
+                            async: true,
+                            success:function(data){
+                              console.log(data.other);
+                              $("#td_signCol").bootstrapTable("refresh");
+                            },
+                            error:function (data) {
+                              console.log(data.other);
+                              alert("!");
+                            }
+                          })
+                        },
+                        'click #unqualified':function(e, value, row, index){
+                          //TODO：与上同理
+                          var tid = row.tid;
+                          var data = {
+                            "id":tid
+                          };
+                            $.ajax({
+                              url:'unverifyInfo',
+                              type: 'post',
+                              data: JSON.stringify(data),
+                              dataType:"json",
+                              contentType:"application/json;charset=utf-8",
+                              async: true,
+                              success:function(data){
+                                $('#td_signCol').bootstrapTable('refresh');
+                              }
+                            })
+                        }
+                      }
+                    }
+                    ]
+                  ]
+              });
+          };
+          return oTableInit;
+      };
+    </script>
+  </body>
+</html>

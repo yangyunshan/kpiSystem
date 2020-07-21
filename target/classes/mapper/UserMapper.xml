@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kpi.dao.UserDAO">
+    <insert id="addUser" useGeneratedKeys="true" keyColumn="tid" keyProperty="user.id">
+        INSERT INTO USER VALUES(#{user.id},#{user.name},#{user.password},#{user.sex},#{user.phone},#{user.email},#{user.role},#{user.status})
+    </insert>
+
+    <update id="updateUser" useGeneratedKeys="true" keyColumn="tid" keyProperty="user.id">
+        UPDATE USER SET tid = #{user.id},username = #{user.name},password = #{user.password},
+        sex = #{user.sex},phone = #{user.phone},email = #{user.email},role = #{user.role},status = #{user.status}
+        WHERE tid = #{user.id}
+    </update>
+
+    <select id="queryUserInfoById" resultMap="user">
+        SELECT * FROM USER WHERE TID = #{id}
+    </select>
+
+    <select id="queryAllUserInfo" resultMap="user">
+        SELECT * FROM USER
+    </select>
+
+    <select id="queryAllUser" resultMap="user">
+        SELECT
+        u.tid,
+        u.username,
+        u.password,
+        u.sex,
+        u.phone,
+        u.email,
+        u.role,
+        u.status,
+        i.itemid AS iid,
+        i.itemname AS iname,
+        i.deptno AS ideptno,
+        i.participantno AS iparticipantno,
+        i.rank AS irank,
+        i.count AS icount,
+        i.description AS idescription,
+        i.score AS iscore,
+        i.tid AS itid,
+        f.id AS fid,
+        f.name AS fname,
+        f.path AS fpath,
+        f.itemid AS fitemid,
+        f.tid AS ftid
+        FROM
+        (USER u JOIN ITEM i ON u.tid = i.tid) JOIN FILE f ON i.itemid = f.itemid AND i.tid = f.tid
+    </select>
+
+    <select id="queryUserById" resultMap="user">
+        SELECT
+        u.tid,
+        u.username,
+        u.password,
+        u.sex,
+        u.phone,
+        u.email,
+        u.role,
+        u.status,
+        i.itemid AS iid,
+        i.itemname AS iname,
+        i.deptno AS ideptno,
+        i.participantno AS iparticipantno,
+        i.rank AS irank,
+        i.count AS icount,
+        i.description AS idescription,
+        i.score AS iscore,
+        i.tid AS itid,
+        f.id AS fid,
+        f.name AS fname,
+        f.path AS fpath,
+        f.itemid AS fitemid,
+        f.tid AS ftid
+        FROM
+        (USER u JOIN ITEM i ON u.tid = i.tid) JOIN FILE f ON i.itemid = f.itemid AND i.tid = f.tid
+        WHERE u.TID = #{id}
+    </select>
+
+    <select id="queryUserByName" resultMap="user">
+        SELECT
+        u.tid,
+        u.username,
+        u.password,
+        u.sex,
+        u.phone,
+        u.email,
+        u.role,
+        u.status,
+        i.itemid AS iid,
+        i.itemname AS iname,
+        i.deptno AS ideptno,
+        i.participantno AS iparticipantno,
+        i.rank AS irank,
+        i.count AS icount,
+        i.description AS idescription,
+        i.score AS iscore,
+        i.tid AS itid,
+        f.id AS fid,
+        f.name AS fname,
+        f.path AS fpath,
+        f.itemid AS fitemid,
+        f.tid AS ftid
+        FROM
+        (USER u JOIN ITEM i ON u.tid = i.tid) JOIN FILE f ON i.itemid = f.itemid AND i.tid = f.tid
+        WHERE u.USERNAME = #{userName}
+    </select>
+
+    <delete id="deleteUserById">
+        DELETE FROM USER WHERE TID = #{id}
+    </delete>
+
+    <delete id="deleteUserByName">
+        DELETE FROM USER WHERE USERNAME = #{userName}
+    </delete>
+
+    <resultMap id="user" type="com.kpi.pojo.User">
+        <id column="tid" property="id"/>
+        <result column="username" property="name"/>
+        <result column="password" property="password"/>
+        <result column="sex" property="sex"/>
+        <result column="phone" property="phone"/>
+        <result column="email" property="email"/>
+        <result column="role" property="role"/>
+        <result column="status" property="status"/>
+        <collection property="items" ofType="com.kpi.pojo.Item">
+            <id column="iid" property="id"/>
+            <result column="iname" property="name"/>
+            <result column="ideptno" property="deptNo"/>
+            <result column="iparticipantno" property="participantNo"/>
+            <result column="irank" property="rank"/>
+            <result column="icount" property="count"/>
+            <result column="idescription" property="description"/>
+            <result column="iscore" property="score"/>
+            <result column="itid" property="tid"/>
+            <collection property="file" ofType="com.kpi.pojo.EvidentFile">
+                <id column="id" property="id"></id>
+                <result column="fname" property="name"/>
+                <result column="fpath" property="path"/>
+                <result column="fitemid" property="itemId"/>
+                <result column="ftid" property="tid"/>
+            </collection>
+<!--            <association property="file" javaType="com.kpi.pojo.EvidentFile">-->
+<!--                <id column="fid" property="id"/>-->
+<!--                <result column="fname" property="name"/>-->
+<!--                <result column="fpath" property="path"/>-->
+<!--                <result column="fitemid" property="itemId"/>-->
+<!--                <result column="ftid" property="tid"/>-->
+<!--            </association>-->
+        </collection>
+    </resultMap>
+</mapper>
