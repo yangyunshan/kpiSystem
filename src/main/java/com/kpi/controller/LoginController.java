@@ -26,6 +26,7 @@ public class LoginController {
         ResultModel resultModel = SpringContextUtil.getBean("resultModel");
         int role = userService.queryUserInfoById(userModel.getId()).getRole();
         if (isLogin) {
+            User user = userService.queryUserInfoById(userModel.getId());
             String username = userService.queryUserInfoById(userModel.getId()).getName();
             session.setAttribute("username",username);
             session.setAttribute("role",role+"");
@@ -49,6 +50,7 @@ public class LoginController {
             String username = (String) session.getAttribute("username");
             userModel.setId(tid);
             userModel.setName(username);
+            System.out.println(userModel.getName());
         }
         return userModel;
     }
