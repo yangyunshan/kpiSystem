@@ -52,7 +52,7 @@ textarea{
 
 <!-- 一、按工作项计分类（学校层面工作）  -->   
    <div class="panel panel-info">
-    <div class="panel-heading" align="center"><h3 class="panel-title">一、按工作项计分类（学校层面工作）</h3></div>
+    <div class="panel-heading" align="center"><h3 class="panel-title">一、按工作项计分类（学校层面工作）<span style="color: red;">-请逐条提交</span></h3></div>
     <div class="panel-body">
       <table data-toggle="table">
         <thead>
@@ -111,10 +111,14 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a2" placeholder="教材名|时间|单位|出版社"></textarea></td>
                 <td>
-                    <input type="file" id="file_a2" multiple>
+                    <textarea oninput="ifNullAlert(this)" id="description_a2" placeholder="教材名|时间|单位|出版社"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    <input type="file" id="file_a2" multiple oninput="ifNullFile(this)">
                     <p id="filename_a2"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a2" value="0" style="width: 50%" readonly>
@@ -164,10 +168,14 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a3" placeholder="项目相关信息"></textarea></td>
                 <td>
-                    <input type="file" id="file_a3" multiple>
+                    <textarea id="description_a3" oninput="ifNullAlert(this)" placeholder="项目相关信息"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    <input type="file" id="file_a3" multiple oninput="ifNullFile(this)">
                     <p id="filename_a3"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a3" value="0" style="width: 50%" readonly>
@@ -220,10 +228,15 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a4" placeholder="教学比赛相关信息"></textarea></td>
                 <td>
-                    <input type="file" id="file_a4" multiple>
+                    <textarea id="description_a4" oninput="ifNullAlert(this)" placeholder="教学比赛相关信息"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                
+                </td>
+                <td>
+                    <input type="file" id="file_a4" multiple oninput="ifNullFile(this)">
                     <p id="filename_a4"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a4" value="0" style="width: 50%" readonly>
@@ -278,10 +291,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a9" placeholder="相关信息"></textarea></td>
                 <td>
-                    <input type="file" id="file_a9" value="0" multiple>
+                    
+                    <textarea id="description_a9" oninput="ifNullAlert(this)" placeholder="相关信息"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_a9" value="0" multiple oninput="ifNullFile(this)">
                     <p id="filename_a9"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a9" value="0" style="width: 50%" readonly>
@@ -332,10 +351,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a5" placeholder="相关信息"></textarea></td>
                 <td>
-                    <input type="file" id="file_a5" value="0" multiple>
+                    
+                    <textarea id="description_a5" placeholder="相关信息" oninput="ifNullAlert(this)"></textarea>
+                    <p style="color:red">*此为必填项</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_a5" value="0" multiple oninput="ifNullFile(this)">
                     <p id="filename_a5"></p>
+                    <p style="color:red">*此为必填项</p>
                 </td>
                 <td>
                     <input type="text" id="score_a5" value="0" style="width: 50%" readonly>
@@ -387,10 +412,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a6" placeholder="奖项名|时间|单位"></textarea></td>
                 <td>
-                    <input type="file" id="file_a6" multiple>
+                    
+                    <textarea id="description_a6" placeholder="奖项名|时间|单位" oninput="ifNullAlert(this)"></textarea>
+                    <p style="color:red">*此为必填项</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_a6" multiple  oninput="ifNullFile(this)">
                     <p id="filename_a6"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a6" value="0" style="width: 50%" readonly>
@@ -441,10 +472,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a7" placeholder="课程相关信息|时间|单位"></textarea></td>
                 <td>
-                    <input type="file" id="file_a7" multiple>
+                    
+                    <textarea id="description_a7" placeholder="课程相关信息|时间|单位" oninput="ifNullAlert(this)"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                   
+                    <input type="file" id="file_a7" multiple oninput="ifNullFile(this)">
                     <p id="filename_a7"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a7" value="0" style="width: 50%" readonly>
@@ -497,10 +534,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a8" placeholder="相关信息"></textarea></td>
                 <td>
-                    <input type="file" id="file_a8" multiple>
+
+                    <textarea id="description_a8" placeholder="相关信息" oninput="ifNullAlert(this)"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_a8" multiple oninput="ifNullFile(this)">
                     <p id="filename_a8"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a8" value="0" style="width: 50%" readonly>
@@ -520,15 +563,15 @@ textarea{
        
 <!-- 二、二、按工作量记分  -->   
    <div class="panel panel-info">
-    <div class="panel-heading" align="center"><h3 class="panel-title">二、按工作量记分</h3></div>
+    <div class="panel-heading" align="center"><h3 class="panel-title">二、按工作量记分 <span style="color: red;">-请逐条提交</span></h3></div>
     <div class="panel-body">
       <table data-toggle="table">
         <thead>
             <tr>
                 <th data-rowspan="2">指标项</th>
                 <th data-colspan="4" style="width: 50%">绩效计分项</th>
-                <th data-rowspan="2">简要描述(必填项)</th>
-                <th data-rowspan="2">证明附件(必填项)</th>
+                <th data-rowspan="2">简要描述</th>
+                <th data-rowspan="2">证明附件</th>
                 <th data-rowspan="2">得分</th>
                 <th data-rowspan="2">编辑</th>
 
@@ -633,10 +676,16 @@ textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b1" placeholder="填报执行时间、地点和听课课程，附件为听课本记录页"></textarea></td>
                 <td>
-                    <input type="file" id="file_b1" multiple>
+                    
+                    <textarea id="description_b1" oninput="ifNullAlert(this)" placeholder="填报执行时间、地点和听课课程，附件为听课本记录页"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_b1" oninput="ifNullFile(this)" multiple>
                     <p id="filename_b1"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b1" value="0" style="width: 50%" readonly>
@@ -741,8 +790,13 @@ textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b2" placeholder="填报执行时间、地点和研讨课程，可无附件"></textarea></td>
                 <td>
+                    
+                    <textarea id="description_b2" oninput="ifNullAlert(this)" placeholder="填报执行时间、地点和研讨课程，可无附件"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
                     <input type="file" id="file_b2" disabled>
                 </td>
                 <td>
@@ -848,7 +902,11 @@ textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b3" placeholder="填报执行时间、地点和研讨课程，可无附件"></textarea></td>
+                <td>
+                    
+                    <textarea id="description_b3" oninput="ifNullAlert(this)" placeholder="填报执行时间、地点和研讨课程，可无附件"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
                 <td>
                     <input type="file" id="file_b3" disabled>
                 </td>
@@ -985,8 +1043,16 @@ textarea{
                         <option value="90" >90</option>
                     </select>（单位：天）
                 </td>
-                <td><textarea id="description_b4" placeholder="时间｜野外地点｜所带专业｜班级，可无附件" placeholder=""></textarea></td>
-                <td><input type="file" id="file_b4" disabled></td>
+                <td>
+                    
+                    <textarea id="description_b4" oninput="ifNullAlert(this)" placeholder="时间｜野外地点｜所带专业｜班级，可无附件" placeholder=""></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_b4" disabled >
+                    
+                </td>
                 <td>
                     <input type="text" id="score_b4" value="0" style="width: 50%" readonly>
                 </td>
@@ -1120,9 +1186,16 @@ textarea{
                         <option value="90" >90</option>
                     </select>（单位：天）
                 </td>
-                <td><textarea id="description_b5" placeholder="时间｜野外地点｜所带专业｜班级，可无附件" placeholder=""></textarea></td>
-                <td><input type="file" id="file_b5" disabled></td>
                 <td>
+                    
+                    <textarea id="description_b5" oninput="ifNullAlert(this)" placeholder="时间｜野外地点｜所带专业｜班级，可无附件" placeholder=""></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_b5" disabled ></td>
+                <td>
+                    
                     <input type="text" id="score_b5" value="0" style="width: 50%" readonly>
                 </td>
                 <td>
@@ -1136,7 +1209,7 @@ textarea{
 
         <form enctype="multipart/form-data">
             <tr>
-                <td>2.6走访/约谈学生<br>(说明:与本科生的教育教学相关，非科研指导)</td>
+                <td>2.6走访/约谈学生<br>(说明:与本科生的教育教学相关，非科研指导,本学期心理摸排不算计分)</td>
                 <td>
                     <select id="deptNo_b6" class="form-control" onchange="getScore('b6')" style="display: none">
                         <option value="1" selected >1</option>
@@ -1225,15 +1298,25 @@ textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b6" placeholder="时间｜地点｜学生姓名，可无附件"></textarea></td>
-                <td><input type="file" id="file_b6" disabled></td>
+                <td>
+                    
+                    <textarea disabled id="description_b6">请提交docx附件！文件内容应包括：时间｜地点｜学生姓名|约谈内容，字数不少于一百</textarea>
+                    <label style="height: 70px;" >模板文件：<a href="../template/约谈学生记录表.docx">约谈学生记录表.docx</a></label>
+                </td>
+                <td>
+
+                    <input type="file" id="file_b6" oninput="ifLessThan100(this,b6)" >
+                    <a id="filename_b6" href="#"></a>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
                 <td>
                     <input type="text" id="score_b6" value="0" style="width: 50%" readonly>
                 </td>
                 <td>
-                    <button class="btn btn-default" id="button_b6" type="button" style="width: 40%" onclick="submitInfoWithoutFile('b6')">提交</button>&nbsp;&nbsp;
+                    <button class="btn btn-default" id="button_b6" type="button" style="width: 40%" onclick="submitInfo('b6')">提交</button>&nbsp;&nbsp;
                     <p id="b6">未提交</p>                    
                     <button class="btn btn-default" id="delete_b6" type="button" style="width: 40%" onclick="deleteData('b6')">删除</button>
+                    <p id="ifSumb_b6" style="display: none;">no</p>
 <!--                    <button class="btn btn-default" id="button_" type="button" style="width: 40%">修改</button>-->
                 </td>
             </tr>
@@ -1280,15 +1363,24 @@ textarea{
                         <option value="10">10</option>
                     </select>
                 </td>
-                <td><textarea id="description_b7" placeholder="时间｜地点｜学生姓名，可无附件"></textarea></td>
-                <td><input type="file" id="file_b7" disabled></td>
+                <td>
+                    <textarea disabled id="description_b7">请提交docx附件！文件内容应包括：时间｜地点｜学生姓名|参与班会/指导过程，字数不少于100</textarea>
+                    <label>模板文件：<a href="../template/学生班会学务指导记录表.docx">学生班会学务指导记录表.docx</a></label>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_b7" oninput="ifLessThan100(this,b7)" >
+                    <a id="filename_b7" href="#"></a>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
                 <td>
                     <input type="text" id="score_b7" value="0" style="width: 50%" readonly>
                 </td>
                 <td>
-                    <button class="btn btn-default" id="button_b7" type="button" style="width: 40%" onclick="submitInfoWithoutFile('b7')">提交</button>&nbsp;&nbsp;
+                    <button class="btn btn-default" id="button_b7" type="button" style="width: 40%" onclick="submitInfo('b7')">提交</button>&nbsp;&nbsp;
                     <p id="b7">未提交</p>                    
                     <button class="btn btn-default" id="delete_b7" type="button" style="width: 40%" onclick="deleteData('b7')">删除</button>
+                    <p id="ifSumb_b7" style="display: none;">no</p>
 <!--                    <button class="btn btn-default" id="button_" type="button" style="width: 40%">修改</button>-->
                 </td>
             </tr>
@@ -1335,15 +1427,25 @@ textarea{
                         <option value="10">10</option>
                     </select>
                 </td>
-                <td><textarea id="description_b8" placeholder="时间｜地点｜学生姓名，可无附件"></textarea></td>
-                <td><input type="file" id="file_b8" disabled></td>
+                <td>
+
+                    <textarea disabled id="description_b8">请提交docx附件！文件内容应包括：时间｜地点｜学生姓名|帮扶经过，字数不少于一百</textarea>
+                    <label>模板文件：<a href="../template/帮扶困难学生记录表.docx">帮扶困难学生记录表.docx</a></label>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_b8" oninput="ifLessThan100(this,b8)" >
+                    <a id="filename_b8" href="#"></a>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
                 <td>
                     <input type="text" id="score_b8" value="0" style="width: 50%" readonly>
                 </td>
                 <td>
-                    <button class="btn btn-default" id="button_b8" type="button" style="width: 40%" onclick="submitInfoWithoutFile('b8')">提交</button>&nbsp;&nbsp;
+                    <button class="btn btn-default" id="button_b8" type="button" style="width: 40%" onclick="submitInfo('b8')">提交</button>&nbsp;&nbsp;
                     <p id="b8">未提交</p>                    
                     <button class="btn btn-default" id="delete_b8" type="button" style="width: 40%" onclick="deleteData('b8')">删除</button>
+                    <p id="ifSumb_b8" style="display: none;">no</p>
 <!--                    <button class="btn btn-default" id="button_" type="button" style="width: 40%">修改</button>-->
                 </td>
             </tr>
@@ -1389,10 +1491,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_b9" placeholder="相关证明材料"></textarea></td>
                 <td>
-                    <input type="file" id="file_b9" multiple>
+                    
+                    <textarea id="description_b9" oninput="ifNullAlert(this)" placeholder="相关证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_b9" oninput="ifNullFile(this)" multiple>
                     <p id="filename_b9"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b9" value="0" style="width: 50%" readonly>
@@ -1448,10 +1556,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_b10" placeholder="相关证明材料"></textarea></td>
                 <td>
-                    <input type="file" id="file_b10" multiple>
+                   
+                    <textarea id="description_b10" oninput="ifNullAlert(this)" placeholder="相关证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_b10" oninput="ifNullFile(this)" multiple>
                     <p id="filename_b10"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b10" value="0" style="width: 50%" readonly>
@@ -1506,8 +1620,14 @@ textarea{
                         <option value="10">10</option>
                     </select>
                 </td>
-                <td><textarea id="description_b11" placeholder="相关描述，可无附件"></textarea></td>
-                <td><input type="file" id="file_b11" disabled></td>
+                <td>
+                    
+                    <textarea id="description_b11" oninput="ifNullAlert(this)" placeholder="相关描述，可无附件"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_b11" disabled></td>
                 <td>
                     <input type="text" id="score_b11" value="0" style="width: 50%" readonly>
                 </td>
@@ -1561,8 +1681,14 @@ textarea{
                         <option value="10">10</option>
                     </select>
                 </td>
-                <td><textarea id="description_b12" placeholder="相关描述，可无附件"></textarea></td>
-                <td><input type="file" id="file_b12" disabled></td>
+                <td>
+                    
+                    <textarea id="description_b12" oninput="ifNullAlert(this)" placeholder="相关描述，可无附件"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_b12"  disabled></td>
                 <td>
                     <input type="text" id="score_b12" value="0" style="width: 50%" readonly>
                 </td>
@@ -1614,10 +1740,15 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_b13" placeholder="相关证明材料"></textarea></td>
                 <td>
-                    <input type="file" id="file_b13" multiple>
+                    
+                    <textarea id="description_b13" oninput="ifNullAlert(this)" placeholder="相关证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    <input type="file" id="file_b13" oninput="ifNullFile(this)" multiple>
                     <p id="filename_b13"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b13" value="0" style="width: 50%" readonly>
@@ -1723,9 +1854,11 @@ textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b14" placeholder="填报时间、地点、执行事宜，先自行申报，最终由委员会审核和认定。本项可无附件证明"></textarea></td>
                 <td>
-                    <input type="file" id="file_b14" disabled>
+
+                    <textarea id="description_b14"  placeholder="此项由系务会进行统计，若要自填，须写明时间、地点、主题"></textarea></td>
+                <td>
+                    <input type="file" id="file_b14"  disabled>
                 </td>
                 <td>
                     <input type="text" id="score_b14" value="0" style="width: 50%" readonly>
@@ -1832,8 +1965,12 @@ textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b15" placeholder="填报时间、地点、执行事宜，先自行申报，最终由委员会审核和认定。本项可无附件证明"></textarea></td>
-                <td><input type="file" id="file_b15" disabled></td>
+                <td>
+
+                    <textarea id="description_b15" placeholder="此项由系务会进行统计，若要自填，须写明时间、地点、主题"></textarea></td>
+                <td>
+
+                    <input type="file" id="file_b15"  disabled></td>
                 <td>
                     <input type="text" id="score_b15" value="0" style="width: 50%" readonly>
                 </td>
@@ -1854,7 +1991,7 @@ textarea{
 
 <!-- 三、按双一流贡献值分类  -->
    <div class="panel panel-info">
-    <div class="panel-heading" align="center"><h3 class="panel-title">三、按双一流贡献值分类</h3></div>
+    <div class="panel-heading" align="center"><h3 class="panel-title">三、按双一流贡献值分类 <span style="color: red;">-请逐条提交</span></h3></div>
     <div class="panel-body">
       <table data-toggle="table">
         <thead>
@@ -1968,10 +2105,16 @@ textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_c1" placeholder="相关证明材料"></textarea></td>
                 <td>
-                    <input type="file" id="file_c1" multiple>
+                    
+                    <textarea id="description_c1" oninput="ifNullAlert(this)" placeholder="相关证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_c1" oninput="ifNullFile(this)" multiple>
                     <p id="filename_c1"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c1" value="0" style="width: 50%" readonly>
@@ -2023,10 +2166,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c2" placeholder="相关证明材料"></textarea></td>
                 <td>
-                    <input type="file" id="file_c2" multiple>
+                    
+                    <textarea id="description_c2" oninput="ifNullAlert(this)" placeholder="相关证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" oninput="ifNullFile(this)" id="file_c2" multiple>
                     <p id="filename_c2"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c2" value="0" style="width: 50%" readonly>
@@ -2077,10 +2226,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c3" placeholder="相关证明材料"></textarea></td>
                 <td>
-                    <input type="file" id="file_c3" multiple>
+                    
+                    <textarea id="description_c3" oninput="ifNullAlert(this)" placeholder="相关证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_c3" oninput="ifNullFile(this)" multiple>
                     <p id="filename_c3"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c3" value="0" style="width: 50%" readonly>
@@ -2131,10 +2286,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c4" placeholder="相关证明材料"></textarea></td>
                 <td>
-                    <input type="file" id="file_c4" multiple>
+                    
+                    <textarea id="description_c4" oninput="ifNullAlert(this)" placeholder="相关证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+
+                    <input type="file" id="file_c4" oninput="ifNullFile(this)" multiple>
                     <p id="filename_c4"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c4" value="0" style="width: 50%" readonly>
@@ -2186,10 +2347,17 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c5" placeholder="相关证明材料"></textarea></td>
                 <td>
-                    <input type="file" id="file_c5" multiple>
+
+                    <textarea id="description_c5" oninput="ifNullAlert(this)" placeholder="相关证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_c5" oninput="ifNullFile(this)" multiple>
+                    
                     <p id="filename_c5"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c5" value="0" style="width: 50%" readonly>
@@ -2240,10 +2408,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c6" placeholder="相关证明材料"></textarea></td>
                 <td>
-                    <input type="file" id="file_c6" multiple>
+                    
+                    <textarea id="description_c6" oninput="ifNullAlert(this)" placeholder="相关证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_c6" oninput="ifNullFile(this)" multiple>
                     <p id="filename_c6"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c6" value="0" style="width: 50%" readonly>
@@ -2294,10 +2468,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c7" placeholder="相关证明材料"></textarea></td>
                 <td>
-                    <input type="file" id="file_c7" multiple>
+                    
+                    <textarea id="description_c7" oninput="ifNullAlert(this)" placeholder="相关证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+
+                    <input type="file" id="file_c7" oninput="ifNullFile(this)" multiple>
                     <p id="filename_c7"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c7" value="0" style="width: 50%" readonly>
@@ -2351,10 +2531,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c8" placeholder="相关证明材料"></textarea></td>
                 <td>
-                    <input type="file" id="file_c8" multiple>
+                    
+                    <textarea id="description_c8" oninput="ifNullAlert(this)" placeholder="相关证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_c8" oninput="ifNullFile(this)" multiple>
                     <p id="filename_c8"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c8" value="0" style="width: 50%" readonly>
@@ -2408,10 +2594,16 @@ textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c9" placeholder="相关证明材料"></textarea></td>
                 <td>
-                    <input type="file" id="file_c9" multiple>
+
+                    <textarea id="description_c9" oninput="ifNullAlert(this)" placeholder="相关证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
+                <td>
+                    
+                    <input type="file" id="file_c9" oninput="ifNullFile(this)" multiple>
                     <p id="filename_c9"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c9" value="0" style="width: 50%" readonly>
@@ -2507,9 +2699,15 @@ textarea{
 </div>
 
 <script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/mammoth.browser.js"></script>
+<script src="../js/importWord.js"></script>
+<script src="../js/mustAlert.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
 <script src="../js/bootstrap-table.min.js"></script>
+
 <script src="../js/performancemanager.js"></script>
 <script src="../js/main.js"></script>
+
 </body>
 </html>

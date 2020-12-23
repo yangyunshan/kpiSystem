@@ -1234,16 +1234,16 @@ tbody textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b6" placeholder="时间｜地点｜学生姓名，可无附件" placeholder=""></textarea></td>
+                <td><textarea id="description_b6" placeholder="时间｜地点｜学生姓名，可无附件" placeholder="" disabled></textarea></td>
                 <td>
-                    <input type="file" id="file_b6" disabled>
-<!--                    <a id="filename_b6" href="#"></a>-->
+                    <input type="file" id="file_b6"  oninput="ifImport(this,b6)">
+                    <a id="filename_b6" href="#"></a>
                 </td>
                 <td>
                     <input type="text" id="score_b6" value="0" style="width: 50%">
                 </td>
                 <td>
-                    <button class="btn btn-default" type="button" id="button_b6" style="width: 40%" onclick="submitInfoWithoutFile('b6')">修改</button>&nbsp;&nbsp;
+                    <button class="btn btn-default" type="button" id="button_b6" style="width: 40%" onclick="submitInfo('b6')">修改</button>&nbsp;&nbsp;
                     <p id="b6">未修改</p>                    
                     <button class="btn btn-default" id="delete_b6" type="button" style="width: 40%" onclick="deleteData('b6')">删除</button>
 <!--                    <button class="btn btn-default" type="button" id="button_" style="width: 40%">修改</button>-->
@@ -1342,16 +1342,16 @@ tbody textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b7" placeholder="时间｜地点｜学生姓名，可无附件" placeholder=""></textarea></td>
+                <td><textarea id="description_b7" placeholder="时间｜地点｜学生姓名，可无附件" placeholder="" disabled></textarea></td>
                 <td>
-                    <input type="file" id="file_b7" disabled>
-<!--                    <a id="filename_b7" href="#"></a>-->
+                    <input type="file" id="file_b7" oninput="ifImport(this,b7)">
+                  <a id="filename_b7" href="#"></a>
                 </td>
                 <td>
                     <input type="text" id="score_b7" value="0" style="width: 50%" >
                 </td>
                 <td>
-                    <button class="btn btn-default" type="button" id="button_b7" style="width: 40%" onclick="submitInfoWithoutFile('b7')">修改</button>&nbsp;&nbsp;
+                    <button class="btn btn-default" type="button" id="button_b7" style="width: 40%" onclick="submitInfo('b7')">修改</button>&nbsp;&nbsp;
                     <p id="b7">未修改</p>                    
                     <button class="btn btn-default" id="delete_b7" type="button" style="width: 40%" onclick="deleteData('b7')">删除</button>
 <!--                    <button class="btn btn-default" type="button" id="button_" style="width: 40%">修改</button>-->
@@ -1450,16 +1450,16 @@ tbody textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b8" placeholder="时间｜地点｜学生姓名，可无附件" placeholder=""></textarea></td>
+                <td><textarea id="description_b8" placeholder="时间｜地点｜学生姓名，可无附件" placeholder="" disabled></textarea></td>
                 <td>
-                    <input type="file" id="file_b8" disabled>
-<!--                    <a id="filename_b8" href="#"></a>-->
+                    <input type="file" id="file_b8" oninput="ifImport(this,b8)">
+                 <a id="filename_b8" href="#"></a>
                 </td>
                 <td>
                     <input type="text" id="score_b8" value="0" style="width: 50%">
                 </td>
                 <td>
-                    <button class="btn btn-default" type="button" id="button_b8" style="width: 40%" onclick="submitInfoWithoutFile('b8')">修改</button>&nbsp;&nbsp;
+                    <button class="btn btn-default" type="button" id="button_b8" style="width: 40%" onclick="submitInfo('b8')">修改</button>&nbsp;&nbsp;
                     <p id="b8">未修改</p>                    
                     <button class="btn btn-default" id="delete_b8" type="button" style="width: 40%" onclick="deleteData('b8')">删除</button>
 <!--                    <button class="btn btn-default" type="button" id="button_" style="width: 40%">修改</button>-->
@@ -2582,6 +2582,8 @@ tbody textarea{
 <script src="../js/jquery-3.2.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 <script src="../js/bootstrap-table.min.js"></script>
+<script src="../js/mammoth.browser.js"></script>
+<script src="../js/importWord.js"></script>
 <script src="../js/repReview.js"></script>
 </body>
 </html>

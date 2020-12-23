@@ -43,7 +43,7 @@ public class CommonUserController {
         ResultModel resultModel = SpringContextUtil.getBean("resultModel");
         if (isLogin!=null && isLogin.equals("true")) {
             String tid = (String) session.getAttribute("tid");
-//            //删除原来的信息，重新提交（用户多次提交只保留最后一次的信息）
+//          删除原来的信息，重新提交（用户多次提交只保留最后一次的信息）
             PerformanceManagerService performanceManagerService = SpringContextUtil.getBean(PerformanceManagerService.class);
 
             performanceManagerService.removeInfos(itemid,tid);
