@@ -28,21 +28,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36687253-c48f-4e7a-947f-33a65d18dd9f" name="Default Changelist" comment="不知道更新了什么">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/standard.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/参与系教学(人才培养事务)记录表.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/参与系集体活动(系务会)记录表.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/参与课程(群组)教研讨论记录表.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/组织课程(群组)教研讨论记录表.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/description.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/description.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/performancemanager.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/performancemanager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/repReview.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/repReview.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/performancemanager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/performancemanager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/repReview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/repReview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/学生班会学务指导记录表.docx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/学生班会学务指导记录表.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/帮扶困难学生记录表.docx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/帮扶困难学生记录表.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/约谈学生记录表.docx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/约谈学生记录表.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,13 +266,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -492,7 +481,8 @@
       <workItem from="1608707475798" duration="602000" />
       <workItem from="1608713152294" duration="13074000" />
       <workItem from="1608774764657" duration="11378000" />
-      <workItem from="1608799904660" duration="2321000" />
+      <workItem from="1608799904660" duration="2737000" />
+      <workItem from="1608816292099" duration="1142000" />
     </task>
     <task id="LOCAL-00001" summary="不知道更新了什么">
       <created>1606725002574</created>
@@ -508,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608690067085</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="不知道更新了什么">
+      <created>1608813339736</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608813339736</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

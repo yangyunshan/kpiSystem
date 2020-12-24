@@ -129,7 +129,7 @@ function submitInfo(id) {
             return;
         }
 
-        if (id == 'b7' || id == 'b6' || id == 'b8' || id == 'b2' || id == 'b3') {
+        if (id == 'b7' || id == 'b6' || id == 'b8') {
             if (document.getElementById("ifSumb_" + id).innerHTML == 'no') {
                 alert("文件字数不足200，无法提交！");
                 return;
