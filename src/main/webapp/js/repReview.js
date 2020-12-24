@@ -294,11 +294,7 @@ function getWeightByItemId(itemId, rank) {
         case "a1": {
             switch (parseInt(rank)) {
                 case 1: {
-                    weight = 5;
-                    break;
-                }
-                case 2: {
-                    weight = 2;
+                    weight = 8;
                     break;
                 }
             }
@@ -315,7 +311,15 @@ function getWeightByItemId(itemId, rank) {
                     break;
                 }
                 case 2: {
-                    weight = 2;
+                    weight = 5;
+                    break;
+                }
+                case 3: {
+                    weight = 8;
+                    break;
+                }
+                case 4: {
+                    weight = 10;
                     break;
                 }
             }
@@ -343,8 +347,12 @@ function getWeightByItemId(itemId, rank) {
             break;
         }
         case 'a5': {
-            weight = 10;
-            break;
+            switch (parseInt(rank)) {
+                case 1: {
+                    weight = 10;
+                    break;
+                }
+            }
         }
         case 'a6': {
             switch (parseInt(rank)) {
@@ -364,7 +372,7 @@ function getWeightByItemId(itemId, rank) {
             break;
         }
         case 'a7': {
-            weight = 15;
+            weight = 5;
             break;
         }
         case 'a8': {
@@ -395,18 +403,14 @@ function getWeightByItemId(itemId, rank) {
                     break;
                 }
                 case 3: {
-                    weight = 4;
-                    break;
-                }
-                case 4: {
-                    weight = 3;
-                    break;
-                }
-                case 5: {
                     weight = 2;
                     break;
                 }
             }
+            break;
+        }
+        case 'a10': {
+            weight = 15;
             break;
         }
         case 'b1': {
@@ -422,11 +426,11 @@ function getWeightByItemId(itemId, rank) {
             break;
         }
         case 'b4': {
-            weight = 0.2;
+            weight = 0.15;
             break;
         }
         case 'b5': {
-            weight = 0.5;
+            weight = 0.3;
             break;
         }
         case 'b6': {

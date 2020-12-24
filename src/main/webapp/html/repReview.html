@@ -75,7 +75,7 @@ tbody textarea{
        <tbody>
         <form enctype="multipart/form-data">
             <tr>
-                <td>1.1出版教材</td>
+                <td>1.1出版教材(与培养方案吻合)</td>
                 <td>
                     <select id="deptNo_a2" class="form-control" onchange="getScore('a2')">
                         <option value="1" selected>1</option>
@@ -109,10 +109,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a2" placeholder="教材名|时间|单位|出版社"></textarea></td>
+                <td><textarea id="description_a2" placeholder="出版教材相关信息:教材名|出版时间|出版社|书号,需提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_a2" multiple>
                     <p id="filename_a2"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a2" value="0" style="width: 50%">
@@ -128,7 +129,7 @@ tbody textarea{
 
         <form enctype="multipart/form-data">
             <tr>
-                <td>1.2教学项目</td>
+                <td>1.2本科教学工程项目(即学校教务处立项的教学研究改革项目)</td>
                 <td>
                     <select id="deptNo_a3" class="form-control" onchange="getScore('a3')">
                         <option value="1" selected>1</option>
@@ -149,8 +150,10 @@ tbody textarea{
                 </td>
                 <td>
                     <select id="rank_a3" class="form-control" onchange="getScore('a3')">
-                        <option value="1" selected>校级重点</option>
-                        <option value="2" >校级普通</option>
+                        <option value="1" selected >经费5万(含)以下项目</option>
+                        <option value="2" >经费5万-10万(含)项目</option>
+                        <option value="3" >经费10万-15万(含)项目</option>
+                        <option value="4" >经费15万-20万(含)项目</option>
                     </select>
                 </td>
                 <td>
@@ -163,10 +166,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a3" placeholder="项目相关信息"></textarea></td>
+                <td><textarea id="description_a3" placeholder="本科教学工程项目相关信息,需提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_a3" multiple>
                     <p id="filename_a3"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a3" value="0" style="width: 50%">
@@ -219,10 +223,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a4" placeholder="教学比赛相关信息"></textarea></td>
+                <td><textarea id="description_a4" placeholder="教学比赛相关信息,需提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_a4" multiple>
                     <p id="filename_a4"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a4" value="0" style="width: 50%">
@@ -238,7 +243,7 @@ tbody textarea{
 
         <form enctype="multipart/form-data">
             <tr>
-                <td>1.4教学论文</td>
+                <td>1.4教学论文(见刊后方能申报)</td>
                 <td>
                     <select id="deptNo_a9" class="form-control" onchange="getScore('a9')">
                         <option value="1" selected >1</option>
@@ -250,21 +255,14 @@ tbody textarea{
                 </td>
                 <td>
                     <select id="participantNo_a9" class="form-control" onchange="getScore('a9')">
-                        <option value="1" selected >1</option>
-                        <option value="2" >2</option>
-                        <option value="3" >3</option>
-                        <option value="4" >4</option>
-                        <option value="5" >5</option>
+                        <option value="1" selected >仅限第一作者</option>
                     </select>
                 </td>
                 <td>
                     <select id="rank_a9" class="form-control" onchange="getScore('a9')">
-                        <option value="1" selected>T1</option>
-                        <option value="2">T2</option>
-                        <option value="3">T3</option>
-                        <option value="4">T4</option>
-                        <option value="5">T5</option>
-
+                        <option value="1" selected>T4及以上</option>
+                        <option value="2">T5</option>
+                        <option value="3">T5以下</option>
                     </select>
                 </td>
                 <td>
@@ -277,10 +275,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a9" placeholder="相关信息"></textarea></td>
+                <td><textarea id="description_a9" placeholder="教学论文相关信息,需提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_a9" value="0" multiple>
                     <p id="filename_a9"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a9" value="0" style="width: 50%" >
@@ -296,7 +295,7 @@ tbody textarea{
 
         <form enctype="multipart/form-data">
             <tr>
-                <td>1.5教学名师</td>
+                <td>1.5教学名师/卓越名师(仅限申报当年获批项)</td>
                 <td>
                     <select id="deptNo_a5" class="form-control" onchange="getScore('a5')" style="display: none">
                         <option value="1" selected>1</option>
@@ -309,16 +308,11 @@ tbody textarea{
                 <td>
                     <select id="participantNo_a5" class="form-control" onchange="getScore('a5')" style="display: none">
                         <option value="1" selected>1</option>
-                        <option value="2" >2</option>
-                        <option value="3" >3</option>
-                        <option value="4" >4</option>
-                        <option value="5" >5</option>
                     </select>
                 </td>
                 <td>
                     <select id="rank_a5" class="form-control" onchange="getScore('a5')">
-                        <option value="1" selected>否</option>
-                        <option value="2">是</option>
+                        <option value="1" selected>校级</option>
                     </select>
                 </td>
                 <td>
@@ -331,10 +325,14 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a5" placeholder="相关信息"></textarea></td>
+                <td>
+                    <textarea id="description_a5" placeholder="教学名师相关信息,需提供证明材料"></textarea>
+                    <p style="color:red">*此为必填项</p>
+                </td>
                 <td>
                     <input type="file" id="file_a5" value="0" multiple>
                     <p id="filename_a5"></p>
+                    <p style="color:red">*此为必填项</p>
                 </td>
                 <td>
                     <input type="text" id="score_a5" value="0" style="width: 50%">
@@ -350,7 +348,176 @@ tbody textarea{
 
         <form enctype="multipart/form-data">
             <tr>
-                <td>1.6校级教学成果奖</td>
+                <td>1.6卓越教师(仅限申报当年获批项)</td>
+                <td>
+                    <select id="deptNo_a1" class="form-control" onchange="getScore('a1')" style="display: none">
+                        <option value="1" selected >1</option>
+                        <option value="2" >2</option>
+                        <option value="3" >3</option>
+                        <option value="4" >4</option>
+                        <option value="5" >5</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="participantNo_a1" class="form-control" onchange="getScore('a1')" style="display: none">
+                        <option value="1" selected >1</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="rank_a1" class="form-control" onchange="getScore('a1')">
+                        <option value="1" selected>校级</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="count_a1" class="form-control" onchange="getScore('a1')">
+                        <option value="0" selected>0</option>
+                        <option value="1" >1</option>
+                        <option value="2" >2</option>
+                        <option value="3" >3</option>
+                        <option value="4" >4</option>
+                        <option value="5" >5</option>
+                    </select>
+                </td>
+                <td>
+
+                    <textarea id="description_a1" placeholder="卓越教师相关信息,需提供证明材料" oninput="ifNullAlert(this)"></textarea>
+                    <p style="color:red">*此为必填项</p>
+                </td>
+                <td>
+
+                    <input type="file" id="file_a1" value="0" multiple oninput="ifNullFile(this)">
+                    <p id="filename_a1"></p>
+                    <p style="color:red">*此为必填项</p>
+                </td>
+                <td>
+                    <input type="text" id="score_a1" value="0" style="width: 50%" readonly>
+                </td>
+                <td>
+                    <button class="btn btn-default" id="button_a1" type="button" style="width: 40%" onclick="submitInfo('a1')">提交</button>&nbsp;&nbsp;
+                    <p id="a1">未提交</p>
+                    <button class="btn btn-default" id="delete_a1" type="button" style="width: 40%" onclick="deleteData('a1')">删除</button>
+                    <!--                    <button class="btn btn-default" id="button_" type="button" style="width: 40%">修改</button>-->
+                </td>
+            </tr>
+        </form>
+
+        <form enctype="multipart/form-data">
+            <tr>
+                <td>1.7卓越新秀(仅限申报当年获批项)</td>
+                <td>
+                    <select id="deptNo_a7" class="form-control" onchange="getScore('a7')" style="display: none">
+                        <option value="1" selected >1</option>
+                        <option value="2" >2</option>
+                        <option value="3" >3</option>
+                        <option value="4" >4</option>
+                        <option value="5" >5</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="participantNo_a7" class="form-control" onchange="getScore('a7')" style="display: none">
+                        <option value="1" selected >1</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="rank_a7" class="form-control" onchange="getScore('a7')">
+                        <option value="1" selected>校级</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="count_a7" class="form-control" onchange="getScore('a7')">
+                        <option value="0" selected>0</option>
+                        <option value="1" >1</option>
+                        <option value="2" >2</option>
+                        <option value="3" >3</option>
+                        <option value="4" >4</option>
+                        <option value="5" >5</option>
+                    </select>
+                </td>
+                <td>
+
+                    <textarea id="description_a7" placeholder="卓越新秀相关信息,需提供证明材料" oninput="ifNullAlert(this)"></textarea>
+                    <p style="color:red">*此为必填项</p>
+                </td>
+                <td>
+
+                    <input type="file" id="file_a7" value="0" multiple oninput="ifNullFile(this)">
+                    <p id="filename_a7"></p>
+                    <p style="color:red">*此为必填项</p>
+                </td>
+                <td>
+                    <input type="text" id="score_a7" value="0" style="width: 50%" readonly>
+                </td>
+                <td>
+                    <button class="btn btn-default" id="button_a7" type="button" style="width: 40%" onclick="submitInfo('a7')">提交</button>&nbsp;&nbsp;
+                    <p id="a7">未提交</p>
+                    <button class="btn btn-default" id="delete_a7" type="button" style="width: 40%" onclick="deleteData('a7')">删除</button>
+                    <!--                    <button class="btn btn-default" id="button_" type="button" style="width: 40%">修改</button>-->
+                </td>
+            </tr>
+        </form>
+
+        <form enctype="multipart/form-data">
+            <tr>
+                <td>1.8卓越团队</td>
+                <td>
+                    <select id="deptNo_a10" class="form-control" onchange="getScore('a10')">
+                        <option value="1" selected >1</option>
+                        <option value="2" >2</option>
+                        <option value="3" >3</option>
+                        <option value="4" >4</option>
+                        <option value="5" >5</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="participantNo_a10" class="form-control" onchange="getScore('a10')">
+                        <option value="1" selected >1</option>
+                        <option value="2" >2</option>
+                        <option value="3" >3</option>
+                        <option value="4" >4</option>
+                        <option value="5" >5</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="rank_a10" class="form-control" onchange="getScore('a10')">
+                        <option value="1" selected>校级</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="count_a10" class="form-control" onchange="getScore('a10')">
+                        <option value="0" selected>0</option>
+                        <option value="1" >1</option>
+                        <option value="2" >2</option>
+                        <option value="3" >3</option>
+                        <option value="4" >4</option>
+                        <option value="5" >5</option>
+                    </select>
+                </td>
+                <td>
+
+                    <textarea id="description_a10" placeholder="卓越团队相关信息,需提供证明材料" oninput="ifNullAlert(this)"></textarea>
+                    <p style="color:red">*此为必填项</p>
+                </td>
+                <td>
+
+                    <input type="file" id="file_a10" value="0" multiple oninput="ifNullFile(this)">
+                    <p id="filename_a10"></p>
+                    <p style="color:red">*此为必填项</p>
+                </td>
+                <td>
+                    <input type="text" id="score_a10" value="0" style="width: 50%" readonly>
+                </td>
+                <td>
+                    <button class="btn btn-default" id="button_a10" type="button" style="width: 40%" onclick="submitInfo('a10')">提交</button>&nbsp;&nbsp;
+                    <p id="a10">未提交</p>
+                    <button class="btn btn-default" id="delete_a10" type="button" style="width: 40%" onclick="deleteData('a10')">删除</button>
+                    <!--                    <button class="btn btn-default" id="button_" type="button" style="width: 40%">修改</button>-->
+                </td>
+            </tr>
+        </form>
+
+        <form enctype="multipart/form-data">
+            <tr>
+                <td>1.9校级教学成果奖</td>
                 <td>
                     <select id="deptNo_a6" class="form-control" onchange="getScore('a6')">
                         <option value="1" selected>1</option>
@@ -386,10 +553,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a6" placeholder="奖项名|时间|单位"></textarea></td>
+                <td><textarea id="description_a6" placeholder="校级教学成果奖相关信息:奖项名|时间|单位,需提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_a6" multiple>
                     <p id="filename_a6"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a6" value="0" style="width: 50%">
@@ -405,62 +573,7 @@ tbody textarea{
 
         <form enctype="multipart/form-data">
             <tr>
-                <td>1.7课程建设（资源共享课、视频公开课、MOOC课程、线下、线上、线上线下混合式、虚拟仿真和社会实践等“金课”）</td>
-                <td>
-                    <select id="deptNo_a7" class="form-control" onchange="getScore('a7')">
-                        <option value="1" selected>1</option>
-                        <option value="2" >2</option>
-                        <option value="3" >3</option>
-                        <option value="4" >4</option>
-                        <option value="5" >5</option>
-                    </select>
-                </td>
-                <td>
-                    <select id="participantNo_a7" class="form-control" onchange="getScore('a7')">
-                        <option value="1" selected>1</option>
-                        <option value="2" >2</option>
-                        <option value="3" >3</option>
-                        <option value="4" >4</option>
-                        <option value="5" >5</option>
-                    </select>
-                </td>
-                <td>
-                    <select id="rank_a7" class="form-control" onchange="getScore('a7')">
-                        <option value="1" selected>否</option>
-                        <option value="2">是</option>
-                    </select>
-                </td>
-                <td>
-                    <select id="count_a7" class="form-control" onchange="getScore('a7')">
-                        <option value="0" selected>0</option>
-                        <option value="1" >1</option>
-                        <option value="2" >2</option>
-                        <option value="3" >3</option>
-                        <option value="4" >4</option>
-                        <option value="5" >5</option>
-                    </select>
-                </td>
-                <td><textarea id="description_a7" placeholder="课程相关信息|时间|单位"></textarea></td>
-                <td>
-                    <input type="file" id="file_a7" multiple>
-                    <p id="filename_a7"></p>
-                </td>
-                <td>
-                    <input type="text" id="score_a7" value="0" style="width: 50%">
-                </td>
-                <td>
-                    <button class="btn btn-default" type="button" id="button_a7" style="width: 40%" onclick="submitInfo('a7')">修改</button>&nbsp;&nbsp;
-                    <p id="a7">未修改</p>
-                    <button class="btn btn-default" id="delete_a7" type="button" style="width: 40%" onclick="deleteData('a7')">删除</button>
-
-<!--                    <button class="btn btn-default" type="button" id="button_" style="width: 40%">修改</button>-->
-                </td>
-            </tr>
-        </form>
-
-        <form enctype="multipart/form-data">
-            <tr>
-                <td>1.8班主任</td>
+                <td>1.10班主任</td>
                 <td>
                     <select id="deptNo_a8" class="form-control" onchange="getScore('a8')" style="display: none">
                         <option value="1" selected>1</option>
@@ -497,10 +610,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_a8" placeholder="相关信息"></textarea></td>
+                <td><textarea id="description_a8" placeholder="优秀班主任相关信息,需提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_a8" multiple>
                     <p id="filename_a8"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_a8" value="0" style="width: 50%">
@@ -634,16 +748,15 @@ tbody textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b1" placeholder="填报执行时间、地点和听课课程，附件为听课本记录页"></textarea></td>
+                <td><textarea id="description_b1" placeholder="填报执行时间、地点和听课课程,无需提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
-                    <input type="file" id="file_b1" multiple>
-                    <p id="filename_b1"></p>
+                    <input type="file" id="file_b1" multiple disabled>
                 </td>
                 <td>
                     <input type="text" id="score_b1" value="0" style="width: 50%">
                 </td>
                 <td>
-                    <button class="btn btn-default" type="button" id="button_b1" style="width: 40%" onclick="submitInfo('b1')">修改</button>&nbsp;&nbsp;
+                    <button class="btn btn-default" type="button" id="button_b1" style="width: 40%" onclick="submitInfoWithoutFile('b1')">修改</button>&nbsp;&nbsp;
                     <p id="b1">未修改</p>                    
                     <button class="btn btn-default" id="delete_b1" type="button" style="width: 40%" onclick="deleteData('b1')">删除</button>
 <!--                    <button class="btn btn-default" type="button" id="button_" style="width: 40%">修改</button>-->
@@ -653,7 +766,7 @@ tbody textarea{
 
         <form enctype="multipart/form-data">
             <tr>
-                <td>2.2组织课程教研讨论</td>
+                <td>2.2组织课程(群/组)教研讨论</td>
                 <td>
                     <select id="deptNo_b2" class="form-control" onchange="getScore('b2')" style="display: none">
                         <option value="1" selected>1</option>
@@ -742,16 +855,20 @@ tbody textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b2" placeholder="填报执行时间、地点和研讨课程，可无附件"></textarea></td>
                 <td>
-                    <input type="file" id="file_b2" disabled>
-<!--                    <p id="filename_b2"></p>-->
+                    <textarea disabled id="description_b2">请根据模板提交word附件！文件内容应包括：时间｜地点｜课程(群/组)|研讨内容，字数不少于200</textarea>
+                    <label style="height: 70px;" >模板文件：<a href="../template/组织课程(群组)教研讨论记录表.docx">组织课程(群组)教研讨论记录表.docx</a></label>
+                </td>
+                <td>
+                    <input type="file" id="file_b2" oninput="ifNullFile(this)" multiple>
+                    <p id="filename_b2"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b2" value="0" style="width: 50%">
                 </td>
                 <td>
-                    <button class="btn btn-default" type="button" id="button_b2" style="width: 40%" onclick="submitInfoWithoutFile('b2')">修改</button>&nbsp;&nbsp;
+                    <button class="btn btn-default" type="button" id="button_b2" style="width: 40%" onclick="submitInfo('b2')">修改</button>&nbsp;&nbsp;
                     <p id="b2">未修改</p>                    
                     <button class="btn btn-default" id="delete_b2" type="button" style="width: 40%" onclick="deleteData('b2')">删除</button>
 <!--                    <button class="btn btn-default" type="button" id="button_" style="width: 40%">修改</button>-->
@@ -761,7 +878,7 @@ tbody textarea{
 
         <form enctype="multipart/form-data">
             <tr>
-                <td>2.3参与课程教研讨论</td>
+                <td>2.3参与课程(群/组)教研讨论</td>
                 <td>
                     <select id="deptNo_b3" class="form-control" onchange="getScore('b3')" style="display: none">
                         <option value="1" selected>1</option>
@@ -850,16 +967,20 @@ tbody textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b3" placeholder="填报执行时间、地点和研讨课程，可无附件"></textarea></td>
                 <td>
-                    <input type="file" id="file_b3" disabled>
-<!--                    <p id="filename_b3"></p>-->
+                    <textarea disabled id="description_b3">请根据模板提交word附件！文件内容应包括：时间｜地点｜课程(群/组)|研讨内容，字数不少于200</textarea>
+                    <label style="height: 70px;" >模板文件：<a href="../template/参与课程(群组)教研讨论记录表.docx">参与课程(群组)教研讨论记录表.docx</a></label>
+                </td>
+                <td>
+                    <input type="file" id="file_b3" oninput="ifNullFile(this)" multiple>
+                    <p id="filename_b3"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b3" value="0" style="width: 50%">
                 </td>
                 <td>
-                    <button class="btn btn-default" type="button" id="button_b3" style="width: 40%" onclick="submitInfoWithoutFile('b3')">修改</button>&nbsp;&nbsp;
+                    <button class="btn btn-default" type="button" id="button_b3" style="width: 40%" onclick="submitInfo('b3')">修改</button>&nbsp;&nbsp;
                     <p id="b3">未修改</p>                    
                     <button class="btn btn-default" id="delete_b3" type="button" style="width: 40%" onclick="deleteData('b3')">删除</button>
 <!--                    <button class="btn btn-default" type="button" id="button_" style="width: 40%">修改</button>-->
@@ -988,7 +1109,7 @@ tbody textarea{
                         <option value="90" >90</option>
                     </select>（单位：天）
                 </td>
-                <td><textarea id="description_b4" placeholder="时间｜野外地点｜所带专业｜班级，可无附件" placeholder=""></textarea></td>
+                <td><textarea id="description_b4" placeholder="时间｜野外地点｜所带专业｜班级,无需提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_b4" disabled>
 <!--                    <a id="filename_b4" href="#"></a>-->
@@ -1126,7 +1247,7 @@ tbody textarea{
                         <option value="90" >90</option>
                     </select>（单位：天）
                 </td>
-                <td><textarea id="description_b5" placeholder="时间｜野外地点｜所带专业｜班级，可无附件" placeholder=""></textarea></td>
+                <td><textarea id="description_b5" placeholder="时间｜野外地点｜所带专业｜班级,无需提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_b5" disabled>
 <!--                    <a id="filename_b5" href="#"></a>-->
@@ -1145,7 +1266,7 @@ tbody textarea{
 
         <form enctype="multipart/form-data">
             <tr>
-                <td>2.6走访/约谈学生<br>(说明:与本科生的教育教学相关，非科研指导)</td>
+                <td>2.6走访/约谈学生<br>(说明:与本科生的教育教学相关，非科研指导；本学期心理摸排活动不算)</td>
                 <td>
                     <select id="deptNo_b6" class="form-control" onchange="getScore('b6')" style="display: none">
                         <option value="1" selected>1</option>
@@ -1234,10 +1355,14 @@ tbody textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b6" placeholder="时间｜地点｜学生姓名，可无附件" placeholder="" disabled></textarea></td>
                 <td>
-                    <input type="file" id="file_b6"  oninput="ifImport(this,b6)">
+                    <textarea disabled id="description_b6">请根据模板提交word附件！文件内容应包括：时间｜地点｜学生姓名|约谈内容，字数不少于200</textarea>
+                    <label style="height: 70px;" >模板文件：<a href="../template/约谈学生记录表.docx">约谈学生记录表.docx</a></label>
+                </td>
+                <td>
+                    <input type="file" id="file_b6" oninput="ifLessThan100(this,b6)" >
                     <a id="filename_b6" href="#"></a>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b6" value="0" style="width: 50%">
@@ -1342,10 +1467,14 @@ tbody textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b7" placeholder="时间｜地点｜学生姓名，可无附件" placeholder="" disabled></textarea></td>
                 <td>
-                    <input type="file" id="file_b7" oninput="ifImport(this,b7)">
-                  <a id="filename_b7" href="#"></a>
+                    <textarea disabled id="description_b7">请根据模板提交word附件！文件内容应包括：时间｜地点｜学生姓名|参与班会/指导过程，字数不少于200</textarea>
+                    <label>模板文件：<a href="../template/学生班会学务指导记录表.docx">学生班会学务指导记录表.docx</a></label>
+                </td>
+                <td>
+                    <input type="file" id="file_b7" oninput="ifLessThan100(this,b7)" >
+                    <a id="filename_b7" href="#"></a>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b7" value="0" style="width: 50%" >
@@ -1450,10 +1579,14 @@ tbody textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b8" placeholder="时间｜地点｜学生姓名，可无附件" placeholder="" disabled></textarea></td>
                 <td>
-                    <input type="file" id="file_b8" oninput="ifImport(this,b8)">
-                 <a id="filename_b8" href="#"></a>
+                    <textarea disabled id="description_b8">请根据模板提交word附件！文件内容应包括：时间｜地点｜学生姓名|帮扶经过，字数不少于200</textarea>
+                    <label>模板文件：<a href="../template/帮扶困难学生记录表.docx">帮扶困难学生记录表.docx</a></label>
+                </td>
+                <td>
+                    <input type="file" id="file_b8" oninput="ifLessThan100(this,b8)" >
+                    <a id="filename_b8" href="#"></a>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b8" value="0" style="width: 50%">
@@ -1507,10 +1640,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_b9" placeholder="相关证明材料"></textarea></td>
+                <td><textarea id="description_b9" placeholder="相关描述并提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_b9" multiple>
                     <p id="filename_b9"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b9" value="0" style="width: 50%">
@@ -1566,10 +1700,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_b10" placeholder="相关证明材料"></textarea></td>
+                <td><textarea id="description_b10" placeholder="相关描述并提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_b10" multiple>
                     <p id="filename_b10"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b10" value="0" style="width: 50%">
@@ -1624,7 +1759,7 @@ tbody textarea{
                         <option value="10">10</option>
                     </select>
                 </td>
-                <td><textarea id="description_b11" placeholder="相关描述，可无附件"></textarea></td>
+                <td><textarea id="description_b11" placeholder="仅限当年申请的产学研，详细信息包括学生姓名(含团队名称)，产学研题目,无需提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_b11" disabled>
 <!--                    <a id="filename_b11" href="#"></a>-->
@@ -1682,7 +1817,7 @@ tbody textarea{
                         <option value="10">10</option>
                     </select>
                 </td>
-                <td><textarea id="description_b12" placeholder="相关描述，可无附件"></textarea></td>
+                <td><textarea id="description_b12" placeholder="仅限当年申请的创新创业项目，详细信息包括学生姓名(含团队名称)，创新创业项目名称,无需提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_b12" disabled>
 <!--                    <a id="filename_b12" href="#"></a>-->
@@ -1738,10 +1873,14 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_b13" placeholder="相关证明材料"></textarea></td>
+                <td>
+                    <textarea id="description_b13" oninput="ifNullAlert(this)" placeholder="相关描述并提供证明材料"></textarea>
+                    <p style="color:red">*此为必填项*</p>
+                </td>
                 <td>
                     <input type="file" id="file_b13" multiple>
                     <p id="filename_b13"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b13" value="0" style="width: 50%">
@@ -1847,16 +1986,20 @@ tbody textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b14" placeholder="填报时间、地点、执行事宜，先自行申报，最终由委员会审核和认定。本项可无附件证明"></textarea></td>
                 <td>
-                    <input type="file" id="file_b14" disabled>
-<!--                    <p id="filename_b14"></p>-->
+                    <textarea disabled id="description_b14">请根据模板提交Excel附件！此项自行申报，由系务会认定。文件内容应包括：序号|时间｜地点｜主题</textarea>
+                    <label style="height: 70px;" >模板文件：<a href="../template/参与系集体活动(系务会)记录表.xlsx">参与系集体活动(系务会)记录表.xlsx</a></label>
+                </td>
+                <td>
+                    <input type="file" id="file_b14" oninput="ifNullFile(this)" multiple>
+                    <p id="filename_b14"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b14" value="0" style="width: 50%">
                 </td>
                 <td>
-                    <button class="btn btn-default" type="button" id="button_b14" style="width: 40%" onclick="submitInfoWithoutFile('b14')">修改</button>&nbsp;&nbsp;
+                    <button class="btn btn-default" type="button" id="button_b14" style="width: 40%" onclick="submitInfo('b14')">修改</button>&nbsp;&nbsp;
                     <p id="b14">未修改</p>                    
                     <button class="btn btn-default" id="delete_b14" type="button" style="width: 40%" onclick="deleteData('b14')">删除</button>
 <!--                    <button class="btn btn-default" type="button" id="button_" style="width: 40%">修改</button>-->
@@ -1957,16 +2100,20 @@ tbody textarea{
                         <option value="60" >60</option>
                     </select>
                 </td>
-                <td><textarea id="description_b15" placeholder="填报时间、地点、执行事宜，先自行申报，最终由委员会审核和认定。本项可无附件证明"></textarea></td>
                 <td>
-                    <input type="file" id="file_b15" disabled>
-<!--                    <p id="filename_b15"></p>-->
+                    <textarea disabled id="description_b15">请根据模板提交Excel附件！此项自行申报，由系务会认定。文件内容应包括：序号|时间｜地点｜主题，</textarea>
+                    <label style="height: 70px;" >模板文件：<a href="../template/参与系教学(人才培养事务)记录表.xlsx">参与系教学(人才培养事务)记录表.xlsx</a></label>
+                </td>
+                <td>
+                    <input type="file" id="file_b15" oninput="ifNullFile(this)" multiple>
+                    <p id="filename_b15"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_b15" value="0" style="width: 50%">
                 </td>
                 <td>
-                    <button class="btn btn-default" type="button" id="button_b15" id="button_b15" style="width: 40%" onclick="submitInfoWithoutFile('b15')">修改</button>&nbsp;&nbsp;
+                    <button class="btn btn-default" type="button" id="button_b15" id="button_b15" style="width: 40%" onclick="submitInfo('b15')">修改</button>&nbsp;&nbsp;
                     <p id="b15">未修改</p>                    
                     <button class="btn btn-default" id="delete_b15" type="button" style="width: 40%" onclick="deleteData('b15')">删除</button>
 <!--                    <button class="btn btn-default" type="button" id="button_" style="width: 40%">修改</button>-->
@@ -2041,10 +2188,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c1" placeholder="相关证明材料"></textarea></td>
+                <td><textarea id="description_c1" placeholder="相关描述并提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_c1" multiple>
                     <p id="filename_c1"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c1" value="0" style="width: 50%">
@@ -2096,10 +2244,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c2" placeholder="相关证明材料"></textarea></td>
+                <td><textarea id="description_c2" placeholder="相关描述并提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_c2" multiple>
                     <p id="filename_c2"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c2" value="0" style="width: 50%">
@@ -2150,10 +2299,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c3" placeholder="相关证明材料"></textarea></td>
+                <td><textarea id="description_c3" placeholder="相关描述并提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_c3" multiple>
                     <p id="filename_c3"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c3" value="0" style="width: 50%">
@@ -2204,10 +2354,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c4" placeholder="相关证明材料"></textarea></td>
+                <td><textarea id="description_c4" placeholder="相关描述并提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_c4" multiple>
                     <p id="filename_c4"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c4" value="0" style="width: 50%">
@@ -2259,10 +2410,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c5" placeholder="相关证明材料"></textarea></td>
+                <td><textarea id="description_c5" placeholder="相关描述并提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_c5" multiple>
                     <p id="filename_c5"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c5" value="0" style="width: 50%">
@@ -2313,10 +2465,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c6" placeholder="相关证明材料"></textarea></td>
+                <td><textarea id="description_c6" placeholder="相关描述并提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_c6" multiple>
                     <p id="filename_c6"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c6" value="0" style="width: 50%">
@@ -2367,10 +2520,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c7" placeholder="相关证明材料"></textarea></td>
+                <td><textarea id="description_c7" placeholder="相关描述并提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_c7" multiple>
                     <p id="filename_c7"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c7" value="0" style="width: 50%">
@@ -2424,10 +2578,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c8" placeholder="相关证明材料"></textarea></td>
+                <td><textarea id="description_c8" placeholder="相关描述并提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_c8" multiple>
                     <p id="filename_c8"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c8" value="0" style="width: 50%">
@@ -2481,10 +2636,11 @@ tbody textarea{
                         <option value="5" >5</option>
                     </select>
                 </td>
-                <td><textarea id="description_c9" placeholder="相关证明材料"></textarea></td>
+                <td><textarea id="description_c9" placeholder="相关描述并提供证明材料"></textarea><p style="color:red">*此为必填项*</p></td>
                 <td>
                     <input type="file" id="file_c9" multiple>
                     <p id="filename_c9"></p>
+                    <p style="color:red">*此为必填项*</p>
                 </td>
                 <td>
                     <input type="text" id="score_c9" value="0" style="width: 50%">
